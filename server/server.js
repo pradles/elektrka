@@ -5,6 +5,12 @@ const sqlite3 = require('sqlite3').verbose();
 const app = express();
 
 // Allow all origins to access this server
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 app.use(cors());
 app.use(express.json()); // Middleware to parse JSON request body
 
@@ -20,6 +26,8 @@ db.run(`CREATE TABLE IF NOT EXISTS wattage_data (
   wattage REAL,
   timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
 )`);
+
+
 
 // Define a route
 app.get('/', (req, res) => {
