@@ -4,7 +4,7 @@ import json
 import sys
 ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
 
-url = 'http://localhost:3000/send-wattage'
+url = 'http://172.20.10.4:3000/send-wattage'
 
 # Checking if the request was successful (status code 200)
 while True:
