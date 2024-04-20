@@ -2,7 +2,7 @@
     <h1>Home Screen</h1>
     <footer>
         <a href="/login">Button 1</a>
-        <a href="">Button 2</a>
+        <a href="/test">Button 2</a>
         <a href="">Button 3</a>
     </footer>
 </template>
