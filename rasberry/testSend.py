@@ -11,8 +11,9 @@ while True:
     if ser.in_waiting > 0:
         line = ser.readline().decode('utf-8').rstrip()
         data = {
-            'user': 'test',
-            'room': 'living room',
+            'device_name': 'podaljsek',
+            'user': 'NullPointers',
+            'room': 'Cooking HQ',
             'wattage': line
         }
         response = requests.post(url, json = data)
