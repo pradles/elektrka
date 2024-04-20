@@ -63,7 +63,11 @@ import { createApp, createElementBlock } from 'vue';
       <RoomTile msg="Garage"></RoomTile>
     </div>
   </div>
-  <div class="fixed bottom-4 left-1/2 -translate-x-1/2">
+  <!-- 
+    ========================
+    Add rooms button
+    ========================
+    <div class="fixed bottom-4 left-1/2 -translate-x-1/2">
     <button @click="click()" class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +86,7 @@ import { createApp, createElementBlock } from 'vue';
       </svg>
       <span class="sr-only">Add new item</span>
     </button>
-  </div>
+  </div> -->
 </main>
 </template>
 
