@@ -1,40 +1,17 @@
 <script setup>
 import RoomTile from "../components/RoomTile.vue"
 import { createApp, createElementBlock } from 'vue';
-import Menu from '@/components/Menu'
+import Menu from '@/components/Menu.vue'
+import DeviceTile from '@/components/DeviceTile.vue'
 
-defineProps({
-  room: {
-    type: String,
-    required: true
-  }
-})
 </script>
 
 <template>
 <main class="flex min-h-screen flex-col bg-gray-100 dark:bg-gray-900 no-scrollbar">
   <header class="sticky top-0 flex items-center justify-between bg-white px-4 py-3 shadow dark:bg-gray-950">
     
-    <button class="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="h-6 w-6"
-      >
-        <line x1="4" x2="20" y1="12" y2="12"></line>
-        <line x1="4" x2="20" y1="6" y2="6"></line>
-        <line x1="4" x2="20" y1="18" y2="18"></line>
-      </svg>
-      <span class="sr-only">Open menu</span>
-    </button>
-    <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50">{{ room }}</h1>
+    <Menu></Menu>
+    <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50">room</h1>
     <div class="flex items-center">
       <button
         class="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
@@ -64,12 +41,10 @@ defineProps({
     </div>
   </header>
   <div class="flex-1 overflow-auto p-4">
-    <div class="rooms grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-      <RoomTile msg="Kitchen"></RoomTile>
-      <RoomTile msg="Living room"></RoomTile>
-      <RoomTile msg="Bedroom"></RoomTile>
-      <RoomTile msg="Hallway"></RoomTile>
-      <RoomTile msg="Garage"></RoomTile>
+    <div class="rooms grid grid-cols-1 gap-4 ">
+        <div v-for="d in devices" :key="d.device_name" >
+            <DeviceTile :msg="d.device_name"></DeviceTile>
+        </div>
     </div>
   </div>
 </main>
@@ -89,4 +64,28 @@ function click() {
   div.append(sp)
   console.log(div);
 }
-</script>
+  import axios from 'axios';
+  
+  export default {
+    name: 'Rooms',
+    data() {
+      return {
+        devices: []
+      };
+    },
+    mounted() {
+      this.fetchRooms();
+    },
+    methods: {
+      async fetchRooms() {
+        try {
+          const response = await axios.get('http://172.20.10.4:3000/get-room-info/'+this.$route.params.id);
+          this.devices = response.data.devices;
+          console.log(this.devices[1].device_name);
+        } catch (error) {
+          console.error('Error fetching rooms:', error);
+        }
+      }
+    }
+  };
+  </script>
