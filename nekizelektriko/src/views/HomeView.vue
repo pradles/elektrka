@@ -1,68 +1,103 @@
-<template>
-    <main class="flex min-h-screen items-center justify-center bg-gray-100 px-4 dark:bg-gray-900">
-        <div class="w-full max-w-md space-y-4">
-          <div class="text-center">
-            <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">Sign in to your account</h1>
-            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              Don't have an account?
-              <a href="/signup" class="font-medium text-blue-600 hover:underline dark:text-blue-400" rel="ugc">
-                Sign up
-              </a>
-            </p>
-          </div>
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
-            <div class="p-6 space-y-4">
-              <div>
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  for="email"
-                >
-                  Email
-                </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  id="email"
-                  placeholder="name@example.com"
-                  type="email"
-                />
-              </div>
-              <div>
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  for="password"
-                >
-                  Password
-                </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  id="password"
-                  type="password"
-                />
-              </div>
-            </div>
-            <div class="flex items-center p-6">
-              <button
-                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
-                type="submit"
-              >
-                Sign in
-              </button>
-            </div>
-          </div>
-        </div>
-      </main>
-    
-    
+<script setup>
+import RoomTile from "../components/RoomTile.vue"
+import { createApp, createElementBlock } from 'vue';
+</script>
 
+<template>
+<main class="flex min-h-screen flex-col bg-gray-100 dark:bg-gray-900 no-scrollbar">
+  <header class="sticky top-0 flex items-center justify-between bg-white px-4 py-3 shadow dark:bg-gray-950">
+    <button class="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-6 w-6"
+      >
+        <line x1="4" x2="20" y1="12" y2="12"></line>
+        <line x1="4" x2="20" y1="6" y2="6"></line>
+        <line x1="4" x2="20" y1="18" y2="18"></line>
+      </svg>
+      <span class="sr-only">Open menu</span>
+    </button>
+    <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50">Your Rooms</h1>
+    <div class="flex items-center">
+      <button
+        class="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+        type="button"
+        id="radix-:r0:"
+        aria-haspopup="menu"
+        aria-expanded="false"
+        data-state="closed"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-6 w-6"
+        >
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span class="sr-only">Open user menu</span>
+      </button>
+    </div>
+  </header>
+  <div class="flex-1 overflow-auto p-4">
+    <div class="rooms grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <RoomTile msg="Kitchen"></RoomTile>
+      <RoomTile msg="Living room"></RoomTile>
+      <RoomTile msg="Bedroom"></RoomTile>
+      <RoomTile msg="Hallway"></RoomTile>
+      <RoomTile msg="Garage"></RoomTile>
+    </div>
+  </div>
+  <div class="fixed bottom-4 left-1/2 -translate-x-1/2">
+    <button @click="click()" class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-6 w-6"
+      >
+        <path d="M5 12h14"></path>
+        <path d="M12 5v14"></path>
+      </svg>
+      <span class="sr-only">Add new item</span>
+    </button>
+  </div>
+</main>
 </template>
 
 <style scoped>
-    h1, h2, h3, h4, h5, h6 { 
-        font-family: 'Inter', sans-serif; --font-sans: 'Inter'; 
-    }
-    body { font-family: 'Inter', sans-serif; --font-sans: 'Inter'; }
-    button {
-      background-color: rgb(0, 0, 0);
-      color: white;
-    }
+h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; --font-sans: 'Inter'; }
+body { font-family: 'Inter', sans-serif; --font-sans: 'Inter'; }
 </style>
+
+<script>
+function click() {
+  let div = document.body.getElementsByClassName("rooms")[0]
+  const sp = document.createElement('span')
+
+  createApp(RoomTile, { msg: "new room" }).mount(sp)
+  div.append(sp)
+  console.log(div);
+}
+</script>

@@ -5,7 +5,7 @@
             <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">Create a new account</h1>
             <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
               Already have an account?
-              <a href="/" class="font-medium text-blue-600 hover:underline dark:text-blue-400" rel="ugc">
+              <a href="/login" class="font-medium text-blue-600 hover:underline dark:text-blue-400" rel="ugc">
                 Login
               </a>
             </p>
@@ -32,6 +32,19 @@
                   for="password"
                 >
                   Password
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  id="password"
+                  type="password"
+                />
+              </div>
+              <div>
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="password"
+                >
+                  Confirm Password
                 </label>
                 <input
                   class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
