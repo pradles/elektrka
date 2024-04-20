@@ -2,11 +2,11 @@
     <main class="flex min-h-screen items-center justify-center bg-gray-100 px-4 dark:bg-gray-900">
         <div class="w-full max-w-md space-y-4">
           <div class="text-center">
-            <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">Sign in to your account</h1>
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">Create a new account</h1>
             <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              Don't have an account?
-              <a href="/signup" class="font-medium text-blue-600 hover:underline dark:text-blue-400" rel="ugc">
-                Sign up
+              Already have an account?
+              <a href="/" class="font-medium text-blue-600 hover:underline dark:text-blue-400" rel="ugc">
+                Login
               </a>
             </p>
           </div>
