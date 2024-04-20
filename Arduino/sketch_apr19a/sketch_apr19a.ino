@@ -36,8 +36,7 @@ void setup() {
 // the loop function runs over and over again forever
 void loop() {
   float ACCurrentValue = readACCurrentvaIue();
-  Serial.print(ACCurrentValue);
-  Serial.println(" W");
+  Serial.println(ACCurrentValue);
   digitalWrite(13, HIGH);
   delay(500);
   digitalWrite(13, LOW);
