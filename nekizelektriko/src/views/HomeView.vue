@@ -1,147 +1,64 @@
 <template>
-    
-    <div class="container">
-        
-        <div class="top-section">
-            <h1 class="welcome-text">Welcome!</h1>
-        </div>
-
-        <div class="mid-section">
-            <div class="account-info">
-                <div class="account-image_border ">
-                    <div class="account-image"></div>
-                </div>
-                <h2 class="username">Username</h2>
+    <main class="flex min-h-screen items-center justify-center bg-gray-100 px-4 dark:bg-gray-900">
+        <div class="w-full max-w-md space-y-4">
+          <div class="text-center">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">Sign in to your account</h1>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+              Don't have an account?{" "}
+              <a href="#" class="font-medium text-blue-600 hover:underline dark:text-blue-400" rel="ugc">
+                Sign up
+              </a>
+            </p>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+            <div class="p-6 space-y-4">
+              <div>
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="email"
+                >
+                  Email
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  id="email"
+                  placeholder="name@example.com"
+                  type="email"
+                />
+              </div>
+              <div>
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="password"
+                >
+                  Password
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  id="password"
+                  type="password"
+                />
+              </div>
             </div>
-        </div>
-
-        <div class="household_info-section">
-            <div class="household">
-                <h1>Your Household</h1>
-                <div class="account white">
-                    Account 1
-                </div>
-                <div class="account green">
-                    Account 2
-                </div>
-                <div class="account white">
-                    Account 3
-                </div>
+            <div class="flex items-center p-6">
+              <button
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+                type="submit"
+              >
+                Sign in
+              </button>
             </div>
+          </div>
         </div>
-        
-    </div>
+      </main>
     
-    <footer>
-        <a href="/login">Button 1</a>
-        <a href="/test">Button 2</a>
-        <a href="">Button 3</a>
-    </footer>
+    
 
 </template>
 
 <style scoped>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Arial', sans-serif;
+    h1, h2, h3, h4, h5, h6 { 
+        font-family: 'Inter', sans-serif; --font-sans: 'Inter'; 
     }
-
-    .container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .top-section {
-        width: 100%;
-        height: 16.67vh;
-        background-color: green;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .welcome-text {
-        font-size: 2em;
-        color: white;
-        margin-bottom: 10%;
-    }
-
-    .mid-section {
-        width: 100%;
-        height: 7.33vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: white;
-    }
-
-    .account-info {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .account-image {
-        width: 80px;
-        height: 80px;
-        background-color: grey; /* You can add an image here later */
-        border-radius: 50%; /* Makes it a circle */
-        
-    }
-
-    .account-image_border {
-        width: 90px;
-        height: 90px;
-        background-color: white; /* You can add an image here later */
-        border-radius: 50%; /* Makes it a circle */
-        margin-bottom: 10%;
-        display: flex;
-        justify-content: center; /* Centers horizontally */
-        align-items: center; /* Centers vertically */
-    }
-
-    .username {
-        font-size: 1.2em;
-        color: black;
-    }
-
-    .household {
-        width: 80%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .account {
-        width: calc(33.33% - 20px);
-        height: 100px;
-        background-color: green;
-        color: black;
-        text-align: center;
-        padding: 20px;
-        margin: 10px;
-        border-radius: 8px;
-    }
-
-    .account.white {
-        background-color: white;
-        color: black;
-    }
-
-    .household_info-section {
-        background-color: white;
-        height: 100em;
-        width: 100%;
-    }
-
-    footer {
-        margin-top: 20px;
-    }
+    body { font-family: 'Inter', sans-serif; --font-sans: 'Inter'; }
 </style>
