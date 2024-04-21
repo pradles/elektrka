@@ -24,8 +24,11 @@ Our web app serves as a centralized platform where all your connected devices ar
 
 ### Customizable Alerts and Estimates
 **Device Parameters:** You can set specific parameters for each device to receive accurate alerts. Whether it's power usage thresholds or usage patterns, customize the settings to fit your needs.
+
 **Estimated Usage:** The web app provides estimates of each device's power consumption based on historical data and current settings, helping you plan and manage your energy usage more effectively.
+
 ### Detailed Statistics and Insights
 **Statistics:** Gain insights into your energy consumption with detailed statistics. Track usage trends over time, compare devices, and identify opportunities for optimization.
+
 **Sorting by Rooms or People:** Organize your devices efficiently by sorting them into rooms or associating them with specific individuals. This feature allows for easier management and a clearer overview of your energy usage.
 
