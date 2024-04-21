@@ -11,7 +11,7 @@ import DeviceTile from '@/components/DeviceTile.vue'
   <header class="sticky top-0 flex items-center justify-between bg-white px-4 py-3 shadow dark:bg-gray-950">
     
     <Menu></Menu>
-    <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50">{{room}}</h1>
+    <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:ml-96 ml-4 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2">{{room}}</h1>
     <div class="flex items-center">
       <button
         class="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
@@ -40,7 +40,7 @@ import DeviceTile from '@/components/DeviceTile.vue'
       </button>
     </div>
   </header>
-  <div class=" overflow-auto p-4">
+  <div class=" overflow-auto p-4 sm:ml-96 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2">
       <div class="rooms grid grid-cols-1 gap-4 pb-4">
           <div class="group flex flex-col gap-2 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
             <div class="pb-5">There are <strong>{{ dcount }}</strong> devices in this room. </div>
@@ -68,9 +68,9 @@ import DeviceTile from '@/components/DeviceTile.vue'
       </div>
       
   </div>
-  <h2 class="text-xl font-bold tracking-tight text-center pt-10 pb-5 text-gray-900 dark:text-gray-50">Device Control</h2>
+  <h2 class="text-xl font-bold tracking-tight text-center pt-10 pb-5 text-gray-900 dark:text-gray-50 sm:ml-96 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2">Device Control</h2>
     
-    <div class="rooms grid p-4 pt-2 grid-cols-2 gap-4 ">
+    <div class="rooms grid p-4 pt-2 grid-cols-2 gap-4 sm:ml-96 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2">
       <div v-for="d in devices" :key="d.device_name" >
           <DeviceTile :msg="d.device_name"></DeviceTile>
       </div>
