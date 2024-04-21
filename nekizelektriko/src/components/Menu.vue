@@ -21,22 +21,22 @@
         <ul class="space-y-2 font-medium mt-20">
             <hr>
             <li>
-            <a @click="toggleSidebar" href="#" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+            <a @click="toggleSidebar" href="home" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
                 <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
                     <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
                     <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
                 </svg>
                 <span class="ms-3">
-                    <a href="home">Rooms</a></span>
+                    Rooms</span>
             </a>
             </li>
             <li>
-            <a @click="toggleSidebar" href="#" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+            <a @click="toggleSidebar" href="users" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
                 <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                 </svg>
                 <span class="ms-3">
-                    <a href="users">Users</a></span>
+                    Users</span>
             </a>
             </li>
             <li>
@@ -50,12 +50,12 @@
             </a>
             </li>
             <li>
-            <a @click="toggleSidebar" href="#" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+            <a @click="toggleSidebar" href="/" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
                 <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
                 </svg>
                 <span class="flex-1 ms-3 whitespace-nowrap">
-                    <a href="/">Sign Out</a></span>
+                    Sign Out</span>
             </a>
             </li>
         </ul>

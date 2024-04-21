@@ -5,6 +5,15 @@
       </div>
     </div>
   </template>
+
+  <script setup>
+    defineProps({
+    deviceName: {
+      type: String,
+      required: true
+    },
+  })
+  </script>
   
   <script>
   import axios from 'axios';
@@ -38,11 +47,20 @@
       };
     },
     mounted() {
-      this.fetchDeviceInfo('podaljsek');
+
+        console.log("TLE>>>", this.deviceName);
+        setTimeout(() => {
+            if (this.deviceName) {
+                this.fetchDeviceInfo(this.deviceName);
+            }
+        }, 500);
+    
+
     },
     methods: {
-      async fetchDeviceInfo(deviceName) {
-        const url = `http://172.20.10.4:3000/get-device-info/${deviceName}`;
+      async fetchDeviceInfo(providedDeviceName) {
+        console.log("calling: ",providedDeviceName)
+        const url = `http://172.20.10.4:3000/get-device-info/${providedDeviceName}`;
         try {
           const response = await axios.get(url);
           console.log('Device Info:', response);

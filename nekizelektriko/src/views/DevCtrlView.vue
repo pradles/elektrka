@@ -92,30 +92,13 @@ import DeviceTile from '@/components/DeviceTile.vue'
       
       
   </div>
-<<<<<<< Updated upstream
-  <center>
-    <div style="width: 120px; height: 80px; display: flex; justify-content: center; align-items: center;">
-        <div class="text-xs group flex items-center justify-center rounded-lg bg-white p-4 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800" style="width: 100%; height: 100%;">
-            <span class="text-s text-center">
-                <strong class="text-3xl block">2.14</strong>
-                <span class="block">EUR/month</span>
-            </span>
-        </div>
-    </div>
-</center>
 
-
-  <div class="rooms grid grid-cols-2 p-4 gap-2 ">
-    <div class="text-xs group flex flex-col items-center justify-center gap-2 rounded-lg bg-white p-4  shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
-    <span class="text-s"><strong class="text-3xl">2.8</strong> kW/this week</span> 
-=======
   <div class="rooms grid grid-cols-2 p-4 gap-2 sm:ml-96 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2">
     <div class="text-xs group flex flex-col items-center justify-center gap-2 rounded-lg bg-white p-4  shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
       <span v-if="data.length > 0 && data[0].average_wattage !== undefined" class="text-s">
       <strong class="text-3xl">{{ data[0].average_wattage.toFixed(2) }}</strong> kW/week
       </span>
       <span v-else class="text-s">Loading...</span>
->>>>>>> Stashed changes
     </div>
     <div class="text-xs group flex flex-col items-center justify-center gap-2 rounded-lg bg-white p-4 text-center shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
     <span class="text-s"><strong class="text-3xl">0.56</strong> EUR/this week</span>
@@ -129,7 +112,7 @@ import DeviceTile from '@/components/DeviceTile.vue'
     </div>
 </div>
   <div class="sm:ml-96 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2 mb-10">
-    <Graph deviceName="podaljsek" ></Graph>
+    <Graph :deviceName="device" ></Graph>
   </div>
 </main>
 </template>
