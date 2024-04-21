@@ -6,6 +6,8 @@ import CallbackView from '@/views/CallbackView.vue'
 import SignupView from '@/views/SignupView.vue'
 import DeviceView from '@/views/DeviceView.vue'
 import DevCtrlView from '@/views/DevCtrlView.vue'
+import UsersView from '@/views/UsersView.vue'
+import ProfileView from '@/views/ProfileView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +47,16 @@ const router = createRouter({
       name: 'dev',
       component: DevCtrlView
     },
+    {
+      path: '/users',
+      name: 'users',
+      component: UsersView
+    },
+    {
+      path: '/users/:id',
+      name: 'user',
+      component: ProfileView
+    }
 
   ]
 })
