@@ -28,7 +28,7 @@
     methods: {
       async fetchRooms() {
         try {
-          const response = await axios.get('http://localhost:3000/get-rooms');
+          const response = await axios.get('http://172.20.10.4:3000/get-rooms');
           this.rooms = response.data;
         } catch (error) {
           console.error('Error fetching rooms:', error);

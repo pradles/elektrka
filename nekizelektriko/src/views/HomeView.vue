@@ -5,11 +5,11 @@ import Menu from '../components/Menu.vue'
 </script>
 
 <template>
+
 <main class="flex min-h-screen flex-col bg-gray-100 dark:bg-gray-900 no-scrollbar">
   <header class="sticky top-0 flex items-center justify-between bg-white px-4 py-3 shadow dark:bg-gray-950">
     <Menu></Menu>
-    
-    <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50">Your Rooms</h1>
+    <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:ml-96 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2">Your Rooms</h1>
     <div class="flex items-center">
       <button
         class="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
@@ -38,12 +38,16 @@ import Menu from '../components/Menu.vue'
       </button>
     </div>
   </header>
-  <div class="flex-1 overflow-auto p-4">
+  <div class="flex-1 overflow-auto p-4 sm:ml-96 m-auto sm:w-3/5 w-10/12">
     <div class="rooms grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
       <div v-for="room in rooms" :key="room.room" >
         <RoomTile :msg="room.room"></RoomTile>
       </div>
-      <RoomTile msg="Bedroom"></RoomTile>
+      <RoomTile msg="Room 1"></RoomTile>
+      <RoomTile msg="Room 2"></RoomTile>
+      <RoomTile msg="Room 3"></RoomTile>
+      <RoomTile msg="Room 4"></RoomTile>
+
     </div>
   </div>
   <!-- 
@@ -71,6 +75,7 @@ import Menu from '../components/Menu.vue'
     </button>
   </div> -->
 </main>
+
 </template>
 
 <style scoped>

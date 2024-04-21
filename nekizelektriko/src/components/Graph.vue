@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="m-2 w-full">
+      <div class="m-2 w-10/12">
       <canvas ref="myChartCanvas"></canvas>
       </div>
     </div>
