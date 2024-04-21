@@ -39,4 +39,4 @@ Our web app serves as a centralized platform where all your connected devices ar
 
 **Location alerts:** With tracking user locations we could implement smart device shout downs.
 
-
+**Hardware devices:** Our hardware solution could be transformet into smart power outlet.
