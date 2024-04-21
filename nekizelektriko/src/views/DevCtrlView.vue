@@ -42,25 +42,45 @@ import DeviceTile from '@/components/DeviceTile.vue'
   </header>
   <div class=" overflow-auto p-4">
       <div class="rooms grid grid-cols-1 gap-4 pb-4">
-          <div class="group flex flex-col gap-2 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
-            <label class="inline-flex items-center cursor-pointer">
-                <span class="ms-3 text-sm text-gray-900 dark:text-gray-300 ">Disable  when I'm not home </span>
+        <div class="group flex flex-col gap-2 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
+            <label class="flex items-center justify-between cursor-pointer">
+                <span class="text-sm text-gray-900 dark:text-gray-300">Needs constant power</span>
                 <input type="checkbox" value="" class="sr-only peer" checked>
-                <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                <div class="relative flex-shrink-0 w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             </label>
-          </div>
-          <div class="group flex flex-col gap-2 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
-            <label class="inline-flex items-center cursor-pointer">
+        </div>
+        <div class="group flex flex-col gap-2 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
+            <label class="flex items-center justify-between cursor-pointer">
+                <span class="text-sm text-gray-900 dark:text-gray-300">Disable when I'm not home</span>
+                <input type="checkbox" value="" class="sr-only peer" checked>
+                <div class="relative flex-shrink-0 w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+            </label>
+        </div>
+        <div class="group flex flex-col gap-2 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
+            <label class="flex items-center justify-between cursor-pointer">
                 <span class="ms-3 text-sm text-gray-900 dark:text-gray-300 ">Disable at night</span>
                 <input type="checkbox" value="" class="sr-only peer" checked>
-                <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                <div class="relative flex-shrink-0 w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             </label>
-          </div>
-          <div class="group flex flex-col gap-2 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
-            <label class="inline-flex items-center cursor-pointer">
-                <span class="ms-3 text-sm text-gray-900 dark:text-gray-300 ">Disable from to</span>
+        </div>
+          <div class="group flex flex-col gap-4 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800 container">
+            <label class="flex items-center justify-between cursor-pointer">
+                <span class="text-sm text-gray-900 dark:text-gray-300 font-medium label-text">Disable from</span>
+                <!-- Time input for "Disable from" -->
+                <div class="flex items-center">
+                    <input type="time" class="text-sm text-gray-900 dark:text-gray-300 border rounded-md px-3 py-2 focus:outline-none focus:ring-blue-500 time-input" id="disableFrom">
+                </div>
             </label>
-          </div>
+            <label class="flex items-center justify-between cursor-pointer">
+                <span class="text-sm text-gray-900 dark:text-gray-300 font-medium label-text">Disable to</span>
+                <!-- Time input for "Disable to" -->
+                <div class="flex items-center">
+                    <input type="time" class="text-sm text-gray-900 dark:text-gray-300 border rounded-md px-3 py-2 focus:outline-none focus:ring-blue-500 time-input" id="disableTo">
+                </div>
+            </label>
+        </div>
+        
+        
       </div>
       
       
@@ -90,6 +110,19 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; --font-sans: 'Inter';
 body { font-family: 'Inter', sans-serif; --font-sans: 'Inter'; }
 .text-xs {
   font-size: 0.6em;
+}
+.time-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.time-input:focus {
+    border-color: #3490dc;
 }
 </style>
 
