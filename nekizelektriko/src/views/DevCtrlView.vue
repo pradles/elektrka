@@ -66,14 +66,12 @@ import DeviceTile from '@/components/DeviceTile.vue'
           <div class="group flex flex-col gap-4 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800 container">
             <label class="flex items-center justify-between cursor-pointer">
                 <span class="text-sm text-gray-900 dark:text-gray-300 font-medium label-text">Disable from</span>
-                <!-- Time input for "Disable from" -->
                 <div class="flex items-center">
                     <input type="time" class="text-sm text-gray-900 dark:text-gray-300 border rounded-md px-3 py-2 focus:outline-none focus:ring-blue-500 time-input" id="disableFrom">
                 </div>
             </label>
             <label class="flex items-center justify-between cursor-pointer">
                 <span class="text-sm text-gray-900 dark:text-gray-300 font-medium label-text">Disable to</span>
-                <!-- Time input for "Disable to" -->
                 <div class="flex items-center">
                     <input type="time" class="text-sm text-gray-900 dark:text-gray-300 border rounded-md px-3 py-2 focus:outline-none focus:ring-blue-500 time-input" id="disableTo">
                 </div>
@@ -85,19 +83,31 @@ import DeviceTile from '@/components/DeviceTile.vue'
       
       
   </div>
+  <center>
+    <div style="width: 120px; height: 80px; display: flex; justify-content: center; align-items: center;">
+        <div class="text-xs group flex items-center justify-center rounded-lg bg-white p-4 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800" style="width: 100%; height: 100%;">
+            <span class="text-s text-center">
+                <strong class="text-3xl block">2.14</strong>
+                <span class="block">EUR/month</span>
+            </span>
+        </div>
+    </div>
+</center>
+
+
   <div class="rooms grid grid-cols-2 p-4 gap-2 ">
     <div class="text-xs group flex flex-col items-center justify-center gap-2 rounded-lg bg-white p-4  shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
-    <span class="text-s"><strong class="text-3xl">123</strong> kW/week</span> 
+    <span class="text-s"><strong class="text-3xl">2.8</strong> kW/this week</span> 
     </div>
     <div class="text-xs group flex flex-col items-center justify-center gap-2 rounded-lg bg-white p-4 text-center shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
-    <span class="text-s"><strong class="text-3xl">245</strong> EUR/month</span>
+    <span class="text-s"><strong class="text-3xl">0.56</strong> EUR/this week</span>
     </div>
    
     <div class=" text-xs group flex items-center justify-center gap-2 rounded-lg bg-white p-4 text-center shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
-    <span><strong class="text-3xl">+52</strong> kW</span> &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#ff0000" stroke="#ff0000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M3 20h18L12 4z"/></svg>
+    <span><strong class="text-3xl">+0.2</strong> kW/last week</span> &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#ff0000" stroke="#ff0000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M3 20h18L12 4z"/></svg>
     </div>
     <div class=" text-xs group flex items-center justify-center gap-2 rounded-lg bg-white p-4 text-center shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
-    <span><strong class="text-3xl">+76</strong> EUR</span> &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#ff0000" stroke="#ff0000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M3 20h18L12 4z"/></svg>
+    <span><strong class="text-3xl">+0.04</strong> EUR/last week</span> &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#ff0000" stroke="#ff0000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M3 20h18L12 4z"/></svg>
     </div>
 </div>
 
