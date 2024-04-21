@@ -32,3 +32,11 @@ Our web app serves as a centralized platform where all your connected devices ar
 
 **Sorting by Rooms or People:** Organize your devices efficiently by sorting them into rooms or associating them with specific individuals. This feature allows for easier management and a clearer overview of your energy usage.
 
+# Future Plans and Potential Features
+**Energy Usage History:** We plan to implement a feature that allows users to view historical energy usage data over extended periods. This will provide a deeper understanding of energy consumption patterns and trends.
+
+**Energy Saving Tips:** We aim to incorporate energy-saving tips and recommendations based on your usage patterns and device settings, helping you reduce energy consumption and save money.
+
+**Location alerts:** With tracking user locations we could implement smart device shout downs.
+
+
