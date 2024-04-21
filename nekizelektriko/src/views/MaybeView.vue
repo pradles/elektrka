@@ -3,6 +3,8 @@
     <left-menu></left-menu>
     <div class="sm:ml-96 m-auto sm:w-3/5 w-10/12 sm:pt-10 pt-7">
       <rooms></rooms>
+      <br>
+      <graph></graph>
     </div>
   </div>
 </template>
@@ -10,12 +12,15 @@
 <script>
 import LeftMenu from '../components/Menu.vue';
 import Rooms from '../components/Rooms.vue';
+import Graph from '../components/Graph.vue';
+
 
 export default {
   name: 'App',
   components: {
     LeftMenu,
     Rooms,
+    Graph,
   }
 }
 </script>
