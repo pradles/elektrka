@@ -19,5 +19,13 @@ Our innovative hardware solution utilizes a combination of sensors, microcontrol
 **Vue.js Frontend:** The stored data is utilized by our Vue.js frontend, providing a user-friendly interface where you can monitor and manage your devices' power usage.
 
 
-## User frendly interface
+## Centralized Device Management - Web app
+Our web app serves as a centralized platform where all your connected devices are displayed. Whether you have smart devices or traditional ones managed through our hardware solution, you can view and manage them all in one place.
+
+## Customizable Alerts and Estimates
+**Device Parameters:** You can set specific parameters for each device to receive accurate alerts. Whether it's power usage thresholds or usage patterns, customize the settings to fit your needs.
+**Estimated Usage:** The web app provides estimates of each device's power consumption based on historical data and current settings, helping you plan and manage your energy usage more effectively.
+## Detailed Statistics and Insights
+**Statistics:** Gain insights into your energy consumption with detailed statistics. Track usage trends over time, compare devices, and identify opportunities for optimization.
+**Sorting by Rooms or People:** Organize your devices efficiently by sorting them into rooms or associating them with specific individuals. This feature allows for easier management and a clearer overview of your energy usage.
 
