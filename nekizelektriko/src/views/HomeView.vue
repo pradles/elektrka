@@ -43,6 +43,7 @@ import Menu from '../components/Menu.vue'
       <div v-for="room in rooms" :key="room.room" >
         <RoomTile :msg="room.room"></RoomTile>
       </div>
+      <RoomTile msg="Bedroom"></RoomTile>
     </div>
   </div>
   <!-- 

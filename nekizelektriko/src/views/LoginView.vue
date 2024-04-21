@@ -41,12 +41,12 @@
               </div>
             </div>
             <div class="flex items-center p-6">
-              <button
+              <a
                 class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
-                type="submit"
+                href="/home"
               >
                 Sign in
-              </button>
+            </a>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@
         font-family: 'Inter', sans-serif; --font-sans: 'Inter'; 
     }
     body { font-family: 'Inter', sans-serif; --font-sans: 'Inter'; }
-    button {
+    a {
       background-color: rgb(0, 0, 0);
       color: white;
     }
