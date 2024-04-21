@@ -226,7 +226,6 @@ app.get('/get-user-info/:userName', (req, res) => {
 app.get('/get-device-info/:deviceName', (req, res) => {
   try {
     const deviceName = req.params.deviceName;
-
     // Query to get user, room, average wattage, and wattage with timestamps for the device
     const query = `
       SELECT user, room, SUM(wattage)/COUNT(room) AS average_wattage

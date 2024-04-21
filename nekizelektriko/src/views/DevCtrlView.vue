@@ -11,8 +11,9 @@ import DeviceTile from '@/components/DeviceTile.vue'
   <header class="sticky top-0 flex items-center justify-between bg-white px-4 py-3 shadow dark:bg-gray-950">
     
     <Menu></Menu>
-    <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50">{{ device }}</h1>
+    <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:ml-96 ml-4 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2">{{ device }}</h1>
     <div class="flex items-center">
+
       <button
         class="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
         type="button"
@@ -40,8 +41,16 @@ import DeviceTile from '@/components/DeviceTile.vue'
       </button>
     </div>
   </header>
-  <div class=" overflow-auto p-4">
+  <div class=" overflow-auto p-4 sm:ml-96 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2">
       <div class="rooms grid grid-cols-1 gap-4 pb-4">
+        <div class="group flex flex-col gap-2 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
+            <label class=" cursor-pointer">
+                <span v-if="data.length > 0 && data[0].user !== undefined" class="text-sm text-gray-900 dark:text-gray-300">Owned by <span class="font-semibold">{{ this.data[0].user }}</span></span>
+                <span v-else class="text-s">Loadings...</span><br>
+                <span v-if="data.length > 0 && data[0].room !== undefined" class="text-sm text-gray-900 dark:text-gray-300">Location <span class="font-semibold">{{ this.data[0].room }}</span></span>
+                <span v-else class="text-s">Loadings...</span>
+            </label>
+        </div>
         <div class="group flex flex-col gap-2 rounded-lg bg-white p-5 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
             <label class="flex items-center justify-between cursor-pointer">
                 <span class="text-sm text-gray-900 dark:text-gray-300">Needs constant power</span>
@@ -83,6 +92,7 @@ import DeviceTile from '@/components/DeviceTile.vue'
       
       
   </div>
+<<<<<<< Updated upstream
   <center>
     <div style="width: 120px; height: 80px; display: flex; justify-content: center; align-items: center;">
         <div class="text-xs group flex items-center justify-center rounded-lg bg-white p-4 shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800" style="width: 100%; height: 100%;">
@@ -98,6 +108,14 @@ import DeviceTile from '@/components/DeviceTile.vue'
   <div class="rooms grid grid-cols-2 p-4 gap-2 ">
     <div class="text-xs group flex flex-col items-center justify-center gap-2 rounded-lg bg-white p-4  shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
     <span class="text-s"><strong class="text-3xl">2.8</strong> kW/this week</span> 
+=======
+  <div class="rooms grid grid-cols-2 p-4 gap-2 sm:ml-96 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2">
+    <div class="text-xs group flex flex-col items-center justify-center gap-2 rounded-lg bg-white p-4  shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
+      <span v-if="data.length > 0 && data[0].average_wattage !== undefined" class="text-s">
+      <strong class="text-3xl">{{ data[0].average_wattage.toFixed(2) }}</strong> kW/week
+      </span>
+      <span v-else class="text-s">Loading...</span>
+>>>>>>> Stashed changes
     </div>
     <div class="text-xs group flex flex-col items-center justify-center gap-2 rounded-lg bg-white p-4 text-center shadow-sm transition-colors hover:bg-gray-100 dark:bg-gray-950 dark:hover:bg-gray-800">
     <span class="text-s"><strong class="text-3xl">0.56</strong> EUR/this week</span>
@@ -110,8 +128,9 @@ import DeviceTile from '@/components/DeviceTile.vue'
     <span><strong class="text-3xl">+0.04</strong> EUR/last week</span> &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#ff0000" stroke="#ff0000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M3 20h18L12 4z"/></svg>
     </div>
 </div>
-
-  <div>kle bo graf</div>
+  <div class="sm:ml-96 m-auto sm:w-3/5 w-10/12 sm:pt-4 pt-2 mb-10">
+    <Graph deviceName="podaljsek" ></Graph>
+  </div>
 </main>
 </template>
 
@@ -136,15 +155,20 @@ body { font-family: 'Inter', sans-serif; --font-sans: 'Inter'; }
 }
 </style>
 
+
+
 <script>
+
   import axios from 'axios';
-  let device;
-  
+  import Graph from '../components/Graph.vue';
+
+
   export default {
     name: 'Devices',
     data() {
       return {
-        stats: []
+        data: [],
+        device: null
       };
     },
     mounted() {
@@ -153,11 +177,12 @@ body { font-family: 'Inter', sans-serif; --font-sans: 'Inter'; }
     methods: {
       async fetchRooms() {
         try {
-          device = this.$route.params.id
-          // const response = await axios.get('http://172.20.10.4:3000/get-room-info/'+room);
-          // this.devices = response.data.devices;
-          this.stats = [{device_name: "TV"},{device_name: "Personal Computer"},{device_name: "Phone Charger"}]
-          console.log(device);
+          this.device = this.$route.params.id;
+
+          const response = await axios.get('http://172.20.10.4:3000/get-device-info/'+this.device);
+          console.log(response)
+          this.data = response.data.data;
+          console.log("TLE>",this.data);
         } catch (error) {
           console.error('Error fetching rooms:', error);
         }

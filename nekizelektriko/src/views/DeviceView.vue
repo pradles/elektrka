@@ -105,9 +105,9 @@ body { font-family: 'Inter', sans-serif; --font-sans: 'Inter'; }
       async fetchRooms() {
         try {
           room = this.$route.params.id
-          // const response = await axios.get('http://172.20.10.4:3000/get-room-info/'+room);
-          // this.devices = response.data.devices;
-          this.devices = [{device_name: "TV"},{device_name: "Personal Computer"},{device_name: "Phone Charger"}]
+          const response = await axios.get('http://172.20.10.4:3000/get-room-info/'+room);
+          this.devices = response.data.devices;
+          //this.devices = [{device_name: "TV"},{device_name: "Personal Computer"},{device_name: "Phone Charger"}]
           dcount = this.devices.length
           console.log(this.devices[1].device_name);
         } catch (error) {
