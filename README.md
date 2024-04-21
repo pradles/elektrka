@@ -17,7 +17,8 @@ Our innovative hardware solution utilizes a combination of sensors, microcontrol
 **Arduino Microcontroller:** The sensor sends an analog signal to an Arduino microcontroller. The Arduino reads this signal and prepares it for further processing.
 
 **Signal Transformation:** The analog signal is transformed into power consumption data, providing insights into how much power your device is using.
-** Raspberry Pi: ** The power consumption data is then sent to a Raspberry Pi, acting as the central hub for data collection and processing.
+
+**Raspberry Pi:** The power consumption data is then sent to a Raspberry Pi, acting as the central hub for data collection and processing.
 
 **Node.js Server:** A Node.js server manages the data flow, storing the power consumption data in an SQLite database for easy retrieval and analysis.
 
